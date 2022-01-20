@@ -13,6 +13,10 @@ This is simple documentation on python programming language. I create this docum
   - [Casting](#Casting)
   - [Multiple_Assign](#Multiple_Assign)
   - [Global_Variable](#Global_Variable)
+- [Datatype](#Datatype)
+  - [Number](##Number)
+  - [Type](##Type)
+  - [Random Number](##Random_Number)
 
 #Basic
 Let's see the basic python program :
@@ -224,6 +228,148 @@ x : This is global Variable.
 x : This is changing global Variable.
 ```
 
+# Datatype
+
+Python have lot's of datatype.In here list of datatype in python.
+
+| Datatype      | Type                        |
+| ------------- | --------------------------- |
+| Text Type     | str                         |
+| Numeric       | int,float,complex           |
+| Sequence      | list,tuple,range            |
+| Mapping Type  | dict                        |
+| Set Types     | set, frozenset              |
+| Boolean Types | bool                        |
+| Binary Types  | bytes,bytesarray,memoryview |
+
+Let's see text,numeric, sequence and boolean datatypes :
+
+**_Program : some datatype_**
+
+```python
+# numberic type
+int_number = 30;
+float_number = 32;
+complex_number = 321j;
+
+print("int : ",int_number);
+print("float : ",float_number);
+print("complex_number : ",complex_number);
+
+# text type
+string = "Md Tazri";
+print("string : ",string);
+
+# Boolean type
+boolean = True;
+print("Boolean : ",boolean);
+
+# sequence type
+list = [32,21,"Tazri"];
+tuple = {32,21,21};
+range_type = range(5);
+print("List : ",list);
+print("tupple : ",tuple);
+print("range :",range);
+```
+
+**_Output : some datatype_**
+
+```
+int :  30
+float :  32
+complex_number :  321j
+string :  Md Tazri
+Boolean :  True
+List :  [32, 21, 'Tazri']
+tupple :  {32, 21}
+range : <class 'range'>
+```
+
+## Number
+
+Python have 3 type of number type variable.
+
+- Integare (int)
+- Float (float)
+- Complex (complex)
+
+We already see who to use those number. Now we see how to typecasting.
+
+**_Program : number typecasting_**
+
+```python
+number_int = int("32");
+number_float= float(32);
+number_complex = complex(3222342332432435435345324435324523423);
+
+print("number int : ",number_int);
+print("number float : ",number_float);
+print("number complex : ",number_complex);
+```
+
+**_Output : number typecasting_**
+
+```
+number int :  32
+number float :  32.0
+number complex :  (3.222342332432435e+36+0j)
+```
+
+## Type
+
+type function to see the type of data. It's show the class name. Let's see example :
+
+**_Program : type_**
+
+```python
+number_int = int("32");
+number_float= float(32);
+number_complex = complex(3222342332432435435345324435324523423);
+
+print(type(number_int),": ",number_int);
+print(type(number_float),": ",number_float);
+print(type(number_complex),": ",number_complex);
+```
+
+**_Output : type_**
+
+```
+<class 'int'> :  32
+<class 'float'> :  32.0
+<class 'complex'> :  (3.222342332432435e+36+0j)
+```
+
+## Random_Number
+
+If we create random number in pythen then we first import random library. Which is python builtin library.
+
+**_Syntax :_**
+
+```
+import random
+random.randrange(start,end)
+```
+
+**_Program : random number_**
+
+```python
+import random;
+
+# number from 1 to 10
+print(random.randrange(1,10));
+
+# number from 5 to 106 int
+print(random.randrange(5,106));
+```
+
+**_Output : random number_**
+
+```
+9
+70
+```
+
 ## Arithmetic_Operator
 
 We can use arithmetic operator python as well but in here we can extra two arithmetic operator.
@@ -238,3 +384,5 @@ We can use arithmetic operator python as well but in here we can extra two arith
 | % | Remainder(Modulos) |
 | // | (new) Floor Division |
 | \*\* | Exponentiation |
+
+#Datatype
