@@ -17,8 +17,18 @@ This is simple documentation on python programming language. I create this docum
   - [Number](##Number)
   - [Type](##Type)
   - [Random Number](##Random_Number)
+- [String](#String)
+  - [String Array](##String_Array)
+  - [Loop String](##Loop_String)
+  - [String Len](##String_Len)
+  - [Check String](##Check_String)
+  - [String Method](##String_Method)
+  - [String Concatenate](##String_Concatenate)
+  - [String Format](##String_format)
+  - [Escape_Characters](##Escape_Characters)
 
-#Basic
+# Basic
+
 Let's see the basic python program :
 
 **_Porgram : hello, world!_**
@@ -370,6 +380,538 @@ print(random.randrange(5,106));
 70
 ```
 
+# String
+
+String is which text is start single or double qoutation and end with it. Even if it call string if nothing is double and single qoutation.
+
+**_Program : simple string_**
+
+```python
+double_qoute_string = "This is a string with double qoute";
+
+single_qoute_string = 'This is a string with single qoute';
+
+three_qoute_string = '''
+This is a string with single qoute.
+'''
+
+three_double_qoute_string = """
+This is a string with three double qoute.
+"""
+
+print(double_qoute_string);
+print(single_qoute_string);
+print(three_qoute_string);
+print(three_double_qoute_string);
+```
+
+**_Output : simple string_**
+
+```
+This is a string with double qoute
+This is a string with single qoute
+
+This is a string with single qoute.
+
+
+This is a string with three double qoute.
+
+```
+
+## String_Array
+
+We can access string like array.
+
+**_Syntax access string element_**
+
+```
+string = "name"
+
+in here every element index is
+n = 0
+a = 1
+m = 2
+3 = 3
+
+access 3nd element like
+string[2]
+
+access like
+string[index]
+```
+
+**_Speacify access string element_**
+
+```
+string = "name"
+string[index];
+string[-2]; mean it count reverse
+
+reverse index
+e = -1
+m = -2
+a = -3
+n = -4
+```
+
+**_Select Range syntax_**
+
+```
+string = "name"
+string[start_index : end_index];
+
+by default,
+start_index = 0
+end_index = -1
+
+string[1:]
+output : "ame"
+string[1:3]
+output : "am"
+```
+
+**_Select Reverse syntax_**
+
+```
+string = "name"
+string[::-1]
+it print the string reverse
+output : "eman"
+```
+
+**_Program : access string array_**
+
+```python
+name = "Md Tazri";
+
+print("name : ",name);
+print("name[0] : ",name[0]);
+print("name[-1] : ",name[-1]);
+print("name[2:] : ",name[2:]);
+print("name[:3] : ",name[:3]);
+print("name[3:-2] :",name[3:-2]);
+print("name[::-1] : ",name[::-1]);
+```
+
+**_Output : access string array_**
+
+```
+name :  Md Tazri
+name[0] :  M
+name[-1] :  i
+name[2:] :   Tazri
+name[:3] :  Md
+name[3:-2] : Taz
+name[::-1] :  irzaT dM
+```
+
+**_Important thing about string_**
+
+1. String act like array only access element case.
+1. We can not change string element.
+1. String is unmutable in python.
+
+## Loop String
+
+We also traverse string with loop.
+
+**_Program : loop string_**
+
+```python
+my_name = "Md Tazri";
+
+for l in my_name :
+    print("Letter ",l);
+```
+
+**_Output : loop string_**
+
+```
+my_name = "Md Tazri";
+
+for l in my_name :
+    print("Letter ",l);
+```
+
+## String_Len
+
+We can see string length by len function.
+
+**_Program : string len_**
+
+```python
+name = "Md Tazri";
+print("len(name) : ",len(name));
+```
+
+**_Output: string len_**
+
+```
+len(name) :  8
+```
+
+## Check String
+
+'in' and 'not in' character to check substring exist in another string.
+
+**_Syntax :_**
+
+```
+string = 'something write';
+sub_string = 'sub';
+
+# checking
+sub_string in string;
+## if sub_string exist in string it must be return true other way it return false.
+
+sub_string not in string;
+## if sub_string can not exist in string it must be return true other wish it return false.
+```
+
+**_Program : check string_**
+
+```python
+sentence = "My name is tazri and i live in comilla.";
+
+print("sentence : ");
+print(sentence);
+print("'tazri' in sentence : ");
+print('tazri' in sentence);
+print("'focus' in sentence : ");
+print('focus' in sentence);
+print("'focus' not in sentence : ");
+print('focus' not in sentence);
+print("'tazri' not in sentence : ");
+print('tazri' not in sentence);
+```
+
+**_Output : check string_**
+
+```
+My name is tazri and i live in comilla.
+'tazri' in sentence :
+True
+'focus' in sentence :
+False
+'focus' not in sentence :
+True
+'tazri' not in sentence :
+False
+```
+
+## String_Method
+
+Here some string method :
+| Method | work |
+|--------------|-----------------------------------|
+| capitalize | convert first letter uppercase |
+| lower | convert string lower case |
+| upper | convert string upper case |
+| title | convert string like header |
+| casefold | convert string lower case |
+| count | search subtring how many time |
+| find | return start position of sub str |
+| replace | it replace old sub string by new sub string |
+| strip | remove white space from start to end |
+
+**_Program : string methods 1_**
+
+```python
+sentence = "my name is Md Tazri and I am Student.Do you know me ? i want to be a programmer.";
+
+print("sentence : ");
+print(sentence);
+
+# make capital first letter
+print("\n\nsentence.capitalize()");
+print(sentence.capitalize());
+
+# make string upper
+print("\n\nsentence.upper()");
+print(sentence.upper());
+
+# make string lower case
+print("\n\nsentence.lower()");
+print(sentence.lower());
+
+# make string title
+print("\n\nsentence.title() : ");
+print(sentence.title());
+
+# make string lowercase by casefold
+print("\n\nsentence.casefold() : ");
+print(sentence.casefold());
+
+# count i how many time
+print("\n\nsentence.count('i') : ");
+print(sentence.count('i'));
+
+# count 'name' string position 0 to 8
+print("\n\nsentence.count('name',0,8)");
+print(sentence.count('name',0,8)); ## by default start is 0 and end is -1
+
+# find 'tazri' in string
+print("\n\nsentence.find('tazri') : ");
+print(sentence.find('tazri'));
+
+# find 'Tazri' in string
+print("\n\nsentence.find('Tazri') : ");
+print(sentence.find('Tazri'));
+
+# saytax of find is :
+# find(value,start_index,end_index);
+# by default start = 0 and end is -1
+# it return start position of sub_string in string
+# if return -1 if sub_string not exist in string
+```
+
+**_Output : string method 1_**
+
+```
+sentence :
+my name is Md Tazri and I am Student.Do you know me ? i want to be a programmer.
+
+
+sentence.capitalize()
+My name is md tazri and i am student.do you know me ? i want to be a programmer.
+
+
+sentence.upper()
+MY NAME IS MD TAZRI AND I AM STUDENT.DO YOU KNOW ME ? I WANT TO BE A PROGRAMMER.
+
+
+sentence.lower()
+my name is md tazri and i am student.do you know me ? i want to be a programmer.
+
+
+sentence.title() :
+My Name Is Md Tazri And I Am Student.Do You Know Me ? I Want To Be A Programmer.
+
+
+sentence.casefold() :
+my name is md tazri and i am student.do you know me ? i want to be a programmer.
+
+
+sentence.count('i') :
+3
+
+
+sentence.count('name',0,8)
+1
+
+
+sentence.find('tazri') :
+-1
+
+
+sentence.find('Tazri') :
+14
+```
+
+**_Program : String Methods 2_**
+
+```python
+sentence = "My name is md Tazri and I am a simple students nothing else.";
+tuple = ('black','yellow','red','dry');
+
+
+print("sentence : ");
+print(sentence);
+
+# replase
+'''
+replace sayntax
+string.replace(value,new_value,count)
+
+by default it replace all old value by new value other wish it replace count time.
+'''
+
+print("\n\nsentence.replace('s','t') : ");
+print(sentence.replace('s','t'));
+
+print("\n\nsentence.replace('m','l',2) : ");
+print(sentence.replace('m','l',2));
+
+# swapcase()
+# swapcase return the string where all letter swap from upper to lower and lower to upper.
+
+print("\n\nsentence.swapcase() : ");
+print(sentence.swapcase());
+
+# join()
+# take iterable object and it join them as string by some thing
+# syntax
+# value.join(tuple)
+# it joint by value every element of iterable object
+
+print("\n\ntuple : ");
+print(tuple);
+print("\n\n''.join(tuple) : ");
+print(''.join(tuple));
+
+print("\n\n'--> '.join(tuple) :");
+print('--> '.join(tuple));
+```
+
+**_Output : string methods 2_**
+
+```
+sentence :
+My name is md Tazri and I am a simple students nothing else.
+
+
+sentence.replace('s','t') :
+My name it md Tazri and I am a timple ttudentt nothing elte.
+
+
+sentence.replace('m','l',2) :
+My nale is ld Tazri and I am a simple students nothing else.
+
+
+sentence.swapcase() :
+mY NAME IS MD tAZRI AND i AM A SIMPLE STUDENTS NOTHING ELSE.
+
+
+tuple :
+('black', 'yellow', 'red', 'dry')
+
+
+''.join(tuple) :
+blackyellowreddry
+
+
+'--> '.join(tuple) :
+black--> yellow--> red--> dry
+```
+
+**_Program : string methods 3_**
+
+```python
+sentence = "      this is string ";
+
+# strip
+# remove white spacess from start and end.
+print("sentence : ");
+print(sentence);
+
+print("\n\nsentence.strip() : ");
+print(sentence.strip());
+```
+
+**_Output : string methods 3_**
+
+```
+sentence :
+      this is string
+
+
+sentence.strip() :
+this is string
+```
+
+## String_Canecatenate
+
+We can use + operator to canecatenate more than one string. Let's
+
+**_Program : string canecatenate_**
+
+```python
+string_one = "Md";
+space = " " ;
+string_two = "Tazri";
+
+print(string_one+space+string_two);
+```
+
+**_Output : string canecatenate_**
+
+```
+Md Tazri
+```
+
+## String_Format
+
+format is builtin string function which can use for formating string in my own way.
+
+**_Program : string format_**
+
+```python
+sentence = "Hey, I {} {} and I am {} year old's.";
+sentence_two = "Hey, I am {2} {1} and I am {0} year old's.";
+first_name = "Md";
+last_name = "Tazri";
+age = 17;
+
+print("sentence : ");
+print(sentence);
+
+print("\n\nsentence.format(first_name,last_name,age) : ");
+print(sentence.format(first_name,last_name,age));
+
+print("\n\nsentence_two : ");
+print(sentence_two);
+
+print("\n\nsentence_two.format(age,last_name,first_name) : ");
+print(sentence_two.format(age,last_name,first_name));
+```
+
+**_Output : string format_**
+
+```
+sentence :
+Hey, I {} {} and I am {} year old's.
+
+
+sentence.format(first_name,last_name,age) :
+Hey, I Md Tazri and I am 17 year old's.
+
+
+sentence_two :
+Hey, I am {2} {1} and I am {0} year old's.
+
+
+sentence_two.format(age,last_name,first_name) :
+Hey, I am Md Tazri and I am 17 year old's.
+```
+
+## Escape_Characters
+
+Here list of escape character in python :
+
+| Character | Description           |
+| --------- | --------------------- |
+| \'        | print single quote    |
+| \"        | print double quote    |
+| \\        | print backslash       |
+| \n        | print new line        |
+| \t        | print tab             |
+| \b        | print backspace       |
+| \1oo      | for octal value       |
+| \xhh      | for hexadecimal value |
+
+**_Program : escape character_**
+
+```python
+print("single quote here \'. new line \n double quote here \"")
+print("backslash \\");
+print("tab \tspace");
+print("back \bspace (\\b)");
+print("otacl code \133\134");
+print("hexa code \x32 \x25");
+```
+
+**_Output : escape character_**
+
+```
+single quote here '. new line
+ double quote here "
+backslash \
+tab 	space
+backspace (\b)
+otacl code [\
+hexa code 2 %
+```
+
 ## Arithmetic_Operator
 
 We can use arithmetic operator python as well but in here we can extra two arithmetic operator.
@@ -384,5 +926,3 @@ We can use arithmetic operator python as well but in here we can extra two arith
 | % | Remainder(Modulos) |
 | // | (new) Floor Division |
 | \*\* | Exponentiation |
-
-#Datatype
