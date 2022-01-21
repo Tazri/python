@@ -26,6 +26,8 @@ This is simple documentation on python programming language. I create this docum
   - [String Concatenate](##String_Concatenate)
   - [String Format](##String_format)
   - [Escape_Characters](##Escape_Characters)
+- [Boolean](#Boolean)
+  - [Truthy And Falsy Value](##Truthy_And_Falsy_Value)
 
 # Basic
 
@@ -910,6 +912,65 @@ tab 	space
 backspace (\b)
 otacl code [\
 hexa code 2 %
+```
+
+# Boolean
+
+In python boolean value is True or False. and bool function to convert something to boolean.
+
+**_Program : boolean_**
+
+```python
+# True and False
+
+print("True : ",True);
+print("False : ",False);
+
+print("bool('string') : ",bool('string'));
+```
+
+**_Output : boolean_**
+
+```
+True :  True
+False :  False
+bool('string') :  True
+```
+
+## Truthy_And_Falsy_Value
+
+Some value's in python bool type is false it's call falsy value. Here list of falsy value:
+
+- ''
+- []
+- {}
+- ()
+- 0
+- None
+
+Every value in python bool type is True without Above values.
+
+**_Program : falsy value_**
+
+```python
+# here some falsy value
+print("bool('') : ",bool(''));
+print("bool([]) : ",bool([]));
+print("bool({}) : ",bool({}));
+print("bool(()) : ",bool(()));
+print("bool(0)  : ",bool( 0));
+print("bool(None) :",bool(None));
+```
+
+**_Output : falsy value_**
+
+```
+bool('') :  False
+bool([]) :  False
+bool({}) :  False
+bool(()) :  False
+bool(0)  :  False
+bool(None) : False
 ```
 
 ## Arithmetic_Operator
