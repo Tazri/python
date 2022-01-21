@@ -28,6 +28,13 @@ This is simple documentation on python programming language. I create this docum
   - [Escape_Characters](##Escape_Characters)
 - [Boolean](#Boolean)
   - [Truthy And Falsy Value](##Truthy_And_Falsy_Value)
+- [Operators](#Operators)
+  - [Arithmetic Operator](##Arithmetic_Operator)
+  - [Assignment Operator](##Assignment_Operator)
+  - [Comparison Operator](##Comparison_Operator)
+  - [Logical Operator](##Logical_Operator)
+  - [Identity Operator](##Identity_Operator)
+  - [Membership Operator](##Membership_Operator)
 
 # Basic
 
@@ -973,6 +980,18 @@ bool(0)  :  False
 bool(None) : False
 ```
 
+# Operators
+
+Pythons divides operators in below group :
+
+1. Arithmetic Operator
+1. Assignment Operator
+1. Comparison Operator
+1. Logical Operator
+1. Identity Operator
+1. Membership Operator
+1. Bitwise Operator
+
 ## Arithmetic_Operator
 
 We can use arithmetic operator python as well but in here we can extra two arithmetic operator.
@@ -987,3 +1006,167 @@ We can use arithmetic operator python as well but in here we can extra two arith
 | % | Remainder(Modulos) |
 | // | (new) Floor Division |
 | \*\* | Exponentiation |
+
+Here new Operator is // and \*\*.
+
+**_Program : arithmetic operator_**
+
+```python
+x = 30;
+y = 3;
+
+## addition
+print("x + y : ",x + y);
+
+## we can use + for concatenate string
+print("Hello, " + "World!");
+
+## Subtraction
+print("x - y : ",x - y);
+
+## Division
+print("x / y : ",x / y);
+## here division operator always return float type number
+
+## Multiplication
+print("x * y : ",x*y);
+# we can use * operator to concatenate same string multiple time.
+print("'word '*5 : ",'word'*5);
+
+## Remainder
+print("x%6 : ",x%6);
+
+## Floor Division
+print("x//7 : ",x//7);
+## return division result in floor int type
+
+## exponentition
+print("2**4 : ",2**4);
+## here 2 is base and 4 is power of base
+```
+
+**_Output : arithmetic operator_**
+
+```
+x + y :  33
+Hello, World!
+x - y :  27
+x / y :  10.0
+x * y :  90
+'word '*5 :  wordwordwordwordword
+x%6 :  0
+x//7 :  4
+2**4 :  16
+```
+
+## Assignment_Operator
+
+Assignment operator to use assign value to in variable. Here below python assignment operators :
+
+| operator | Example   | Meaning      |
+| -------- | --------- | ------------ |
+| =        | x = 5     | x = 5        |
+| +=       | x += 5    | x = x + 5    |
+| -=       | x -= 5    | x = x - 5    |
+| \*=      | x \*= 5   | x = x \* 5   |
+| /=       | x /= 5    | x = x / 5    |
+| %=       | x %= 5    | x = x % 5    |
+| //=      | x //= 5   | x = x // 5   |
+| \*\*=    | x \*\*= 5 | x = x \*\* 5 |
+| &=       | x &= 5    | x = x & 5    |
+| \|=      | x \|= 5   | x = x \| 5   |
+| ^=       | x ^= 5    | x = x ^ 5    |
+| >>=      | x >>= 5   | x = x >> 5   |
+| <<=      | x <<= 5   | x = x << 5   |
+
+## Comparison_Operator
+
+Comparison operator use to caompare two value.Here comparison operator :
+
+| Operator | Name                   |
+| -------- | ---------------------- |
+| ==       | Equal                  |
+| !=       | Not Equal              |
+| >        | Greater Than           |
+| <        | Less Than              |
+| >=       | Greater Than and Equal |
+| <=       | Less Than and Equal    |
+
+## Logical_Operator
+
+Here python logical operator :
+
+| Operator | Description |
+| and | Both is True then return Ture otherwish return False |
+| or | I atleast one is True then return True otherwish return False |
+| not | reverse True to False and False to True |
+
+## Identity_Operator
+
+Here python Identity Operator :
+
+| Operator | Description                                            |
+| -------- | ------------------------------------------------------ |
+| is       | Return True if both same otherwish return False        |
+| is not   | Return True if both is not same otherwish return False |
+
+**_Program : identity operator_**
+
+```python
+x = 4;
+y = 4;
+list_x = ['apple','mango'];
+list_y = list_x;
+list_z = ['a','b'];
+str_x = "Md Tazri";
+my_name = "Md Tazri";
+str_z = "hello";
+
+print("x is y : ",x is y);
+print("list_x is lsit_y : ",list_x is list_y);
+print("list_x is not list_z : ",list_x is not list_z);
+print("str_x is str_z : ",str_x is str_z);
+print("my_name is str_z : ",my_name is str_z);
+```
+
+**_Output : identity operator_**
+
+```
+x is y :  True
+list_x is lsit_y :  True
+list_x is not list_z :  True
+str_x is str_z :  False
+my_name is str_z :  False
+```
+
+## Membership_Operator
+
+In below python membership operator and their description :
+
+| Operator | Description                             |
+| -------- | --------------------------------------- |
+| in       | Return True if a sequence in object     |
+| not in   | Return True if a sequence not in object |
+
+**_Program : membership operator_**
+
+```python
+list = ['Apple','Orange','Benana','Mango'];
+name = "Md Tazri";
+
+print('"Apple" in list : ',"Apple" in list);
+print('"Kiwi" in list : ',"Kiwi" in list);
+print('"Water" not in list : ',"Water" not in list);
+print("'Md' in name : ",'Md' in name);
+print("'Tazri' not in name : ",'Tazri' not in name);
+```
+
+**_Output : membership operator_**
+
+```
+"Apple" in list :  True
+"Kiwi" in list :  False
+"Water" not in list :  True
+'Md' in name :  True
+'Tazri' not in name :  False
+```
