@@ -4,6 +4,8 @@
 
 This is simple documentation on python programming language. I create this documentation on my way. I try to understand the python in deep and took down documentation.
 
+![learn python](./asset/image/python.png)
+
 ## Table of Content
 
 - [Basic](#Basic)
@@ -46,6 +48,10 @@ This is simple documentation on python programming language. I create this docum
   - [Unpacking Tuples](##Unpacking_Tuples)
   - [Tuples Join](##Tuples_Join)
   - [Tuple Methods](##Tuple_Methods)
+- [Sets](#Sets)
+  - [Access Sets](##Access_Sets)
+  - [Set Methods](##Set_Methods)
+  - [Sets Join](##Sets_Join)
 
 # Basic
 
@@ -1823,4 +1829,336 @@ names.index('Tazri') :  0
 
 names.count('Tazri') :  2
 names.count('none') 0
+```
+
+# Sets
+
+Set like list and tuple but little more difference here. In here feature of sets :
+
+1. Set items are unordered.
+1. Set items unchangeable.
+1. Do not allow dupllicate
+
+**_Program : basic set_**
+
+```python
+# create set with literal
+names = {'anonymous','focasa','tazri','tazri'};
+print("names : ",names);
+
+# create set with constructor
+fruits = {'apple','kiwi','banana','mango','orange','apple'};
+print("\n\nfruits : ",fruits);
+
+# type
+print("\ntype(names) : ",type(names));
+
+
+# we can not access set like list and we can not change sets value
+
+# we can find out length of set use len method
+print("\n\nlen(fruits) : ",len(fruits));
+```
+
+**_Output : basic set_**
+
+```
+names :  {'tazri', 'focasa', 'anonymous'}
+
+
+fruits :  {'kiwi', 'orange', 'apple', 'banana', 'mango'}
+
+type(names) :  <class 'set'>
+
+
+len(fruits) :  5
+```
+
+## Access_Sets
+
+We can not access set like list in python. We can access set with loop. But check item exist inside the set with membership operator.
+
+**_Program : access sets_**
+
+```python
+names = {'anonymous','tazri','focasa','troy','farha'};
+
+# can use for loop for access names sets
+for name in names :
+    print("Hello, "+name.title()+"!");
+
+# can check value is exist in sets ?
+print("\n'tazri' in names : ",'tazri' in names);
+print("'solus' not in names : ",'solus' not in names);
+print("'xenon' in names : ",'xenon' in names);
+```
+
+**_Output : access sets_**
+
+```
+Hello, Troy!
+Hello, Tazri!
+Hello, Focasa!
+Hello, Farha!
+Hello, Anonymous!
+
+'tazri' in names :  True
+'solus' not in names :  True
+'xenon' in names :  False
+```
+
+## Set_Methods
+
+some set methods use add item inside the set and some use to remove the item from the set.
+
+**_Add item set methods_**
+| Methods | Description |
+|---------|----------------------------------------------|
+| add | add single item in side the set |
+| update | update set with any iterable object like list|
+
+**_Program : add set item_**
+
+```python
+# create sets
+names = {'anonymous','tazri','farha'};
+extra_name = {'tazri','farha','troy'};
+name_list = {'solus','xenon','neon'};
+name_tuple = ('helium','hydrogen');
+
+print("names : ",names);
+
+# add focasa in names
+print("add 'focasa' than set : ");
+names.add("focasa");
+print(names);
+
+# update method
+print("\n\nadd extra_name in set with update method : ");
+names.update(extra_name);
+print(names);
+
+# update set with list
+print("\nadd name_list in set with update method : ");
+names.update(name_list);
+print(names);
+
+# update set with tuple
+print("\nadd name_tuple in set with update method : ");
+names.update(name_tuple);
+print(names);
+```
+
+**_Output : add set item_**
+
+```
+names :  {'anonymous', 'farha', 'tazri'}
+add 'focasa' than set :
+{'anonymous', 'focasa', 'farha', 'tazri'}
+
+
+add extra_name in set with update method :
+{'tazri', 'troy', 'anonymous', 'focasa', 'farha'}
+
+add name_list in set with update method :
+{'tazri', 'neon', 'solus', 'troy', 'xenon', 'anonymous', 'focasa', 'farha'}
+
+add name_tuple in set with update method :
+{'solus', 'helium', 'neon', 'focasa', 'tazri', 'anonymous', 'hydrogen', 'xenon', 'farha', 'troy'}
+```
+
+**_Remove set items metods_**
+| Methods | Description |
+|---------|----------------------------------------------|
+| remove | remove spacify item |
+| discard | work like remove method but if spacify item not exist inside the set then it throw error. |
+| pop | pop remove random item in set because set is not ordered |
+| clear | remove all item from set |
+| del | delete all set |
+
+**_Program : remove set item_**
+
+```python
+names = {'anonymous','tazri','focasa','troy','farha'};
+
+print("names : ",names);
+
+# remove 'anonymous'
+names.remove('anonymous');
+print('after remove anonymous then : ');
+print(names);
+
+# we can not remove item which can not exist in set
+# names.remove('anonymous'); it must throw error
+
+
+# discard is another methods to remove item
+names.discard('tazri');
+print("\n\nremove tazri with discard then : ");
+print(names);
+
+# we can remove item which can not exist in set with discard
+# in that case it can not throw error
+names.discard('tazri');
+
+# pop
+# pop remove last element but we know that set is not ordered
+# in that case it remove randomly one item from set
+print("\n\n after names.pop() : ");
+names.pop();
+print(names);
+
+# clear
+# remove all item from sets
+names.clear();
+print("\nafter names.clear() : ");
+print(names);
+
+# del
+# delete the set
+del names;
+# print("\nafter del names : ");
+# print(names);
+# must be throw a error here
+```
+
+**_Output : remove set item_**
+
+```
+names :  {'anonymous', 'farha', 'tazri', 'troy', 'focasa'}
+after remove anonymous then :
+{'farha', 'tazri', 'troy', 'focasa'}
+
+
+remove tazri with discard then :
+{'farha', 'troy', 'focasa'}
+
+
+ after names.pop() :
+{'troy', 'focasa'}
+
+after names.clear() :
+set()
+```
+
+## Sets_Join
+
+We can join set. In that case use some method. Here these method :
+
+| methods                     | Description                                  |
+| --------------------------- | -------------------------------------------- |
+| union                       | union two set and return new set             |
+| update                      | concatinate two set and remove duplicate     |
+| intersection_update         | keep common items                            |
+| intersection                | keep common items return new set             |
+| symmetric_difference_update | keep all without duplicate                   |
+| symetric_difference         | keem all witout duplicate and return new set |
+
+**_Prgram : set update and union_**
+
+```python
+names_one = {'anonymous','farha','troy'};
+names_two = {'xenon','neon','troy'};
+
+print("names_one : ",names_one);
+print("names_two : ",names_two);
+
+# union
+print("\n\nAfter union between names_one and names_two : ");
+new_names = names_one.union(names_two);
+print(new_names);
+
+# update
+# it work like union it that case it update the set
+names_one.update(names_two);
+print("\nAfter name_one updae : ");
+print(names_one);
+
+```
+
+**_Output : set update and union_**
+
+```
+names_one :  {'anonymous', 'farha', 'troy'}
+names_two :  {'xenon', 'neon', 'troy'}
+
+
+After union between names_one and names_two :
+{'anonymous', 'troy', 'farha', 'xenon', 'neon'}
+
+After name_one updae :
+{'anonymous', 'troy', 'farha', 'xenon', 'neon'}
+```
+
+**_Program : intersection set_**
+
+```python
+names_one = {'anonymous','farha','troy','tazri'};
+names_two = {'tazri','solus','xenon','anonymous','focasa'};
+
+print("names one : ",names_one);
+print("names two : ",names_two);
+
+# intersection
+new_names = names_one.intersection(names_two);
+print("\n\nnames_one and names_two intersection and create new_names : ");
+print("new_names : ",new_names);
+
+# intersection_update
+# it can not return new set just update the set
+names_one.intersection_update(names_two);
+print("\n\nnames_one intersection update with names_two : ");
+print("names_one : ",names_one);
+```
+
+**_Output : intersection set_**
+
+```
+names one :  {'anonymous', 'tazri', 'troy', 'farha'}
+names two :  {'anonymous', 'focasa', 'solus', 'tazri', 'xenon'}
+
+
+names_one and names_two intersection and create new_names :
+new_names :  {'anonymous', 'tazri'}
+
+
+names_one intersection update with names_two :
+names_one :  {'anonymous', 'tazri'}
+```
+
+**_Program : symmetric set_**
+
+```python
+names_one = {'anonymous','troy','farha','focasa','tazri','solus'};
+names_two = {'troy','solus','focasa','xenon','anonymous'};
+
+print("names_one : ",names_one);
+print("names_two : ",names_two);
+
+# symmetric_difference
+# return new set where keep all item just not include duplicates
+new_names = names_one.symmetric_difference(names_two);
+print("\n\nnames_one and names_two symmetric and create new names : ");
+print(new_names);
+
+# symmetric_difference_update
+# it work like symmetric_difference just it can not return new set and update current set
+names_one.symmetric_difference_update(names_two);
+print("\n\nnames_one symmetric_difference with name_two : ");
+print(names_one);
+```
+
+**_Output : symmetric set_**
+
+```
+names_one :  {'tazri', 'troy', 'farha', 'focasa', 'solus', 'anonymous'}
+names_two :  {'troy', 'focasa', 'solus', 'xenon', 'anonymous'}
+
+
+names_one and names_two symmetric and create new names :
+{'tazri', 'farha', 'xenon'}
+
+
+names_one symmetric_difference with name_two :
+{'tazri', 'farha', 'xenon'}
 ```
