@@ -1121,10 +1121,11 @@ Comparison operator use to caompare two value.Here comparison operator :
 
 Here python logical operator :
 
-| Operator | Description |
-| and | Both is True then return Ture otherwish return False |
-| or | I atleast one is True then return True otherwish return False |
-| not | reverse True to False and False to True |
+| Operator | Description                                                   |
+| -------- | ------------------------------------------------------------- |
+| and      | Both is True then return Ture otherwish return False          |
+| or       | I atleast one is True then return True otherwish return False |
+| not      | reverse True to False and False to True                       |
 
 ## Identity_Operator
 
@@ -2611,4 +2612,57 @@ perosn['favorite']['character'] :  levi and L
 
 # if_else
 
-Basic syntax of if else in python is here
+Basic syntax of if else in python is here :
+
+```python
+if condition :
+  statement----------------
+  -------------------------
+elif condition :
+  statement----------------
+  -------------------------
+elif condition :
+  statement----------------
+  -------------------------
+else :
+  statement----------------
+  -------------------------
+```
+
+**_Program : basic if else statement_**
+
+```python
+# create basic if elif
+a = 29;
+b = 32;
+c = 321;
+
+# see how else if work in python
+if a > b and a > c :
+    print("a is greatest value.");
+elif b > a and b > c :
+    print("b is greatest value.");
+else :
+    print("c is greatest value.");
+
+# if need to empty if statement of something like that then use pass keyword
+if 3 :
+    pass;
+
+# we can use if and elif keyword like ternary operator.
+print("a is greatest value.") if a > b and a > c else print("c or b greatest value");
+
+# one line if elif
+if a > b : print("\n\na is greater than b.");
+else : print("\n\nb is greater than a.");
+```
+
+**_Output : basic if else statement_**
+
+```
+c is greatest value.
+c or b greatest value
+
+
+b is greater than a.
+```
