@@ -2938,11 +2938,35 @@ If else block use after for loop then after finish the for loop work and start e
 **_Program : for else_**
 
 ```python
+# use for else loop
+print(">>> 1 To 6 Without Break <<<");
+for i in range(6) :
+    print("> ",i);
+else :
+    print(">>> Finish Successfully <<<");
 
+# use for else loop with break
+print("\n\n>>> 10 To 15 With Break <<<");
+for i in range(10,15) :
+    print("> ",i);
+    break;
+else :
+    print(">>> Finish Successfully <<<");
 ```
 
 **_Output : for else_**
 
 ```
+>>> 1 To 6 Without Break <<<
+>  0
+>  1
+>  2
+>  3
+>  4
+>  5
+>>> Finish Successfully <<<
 
+
+>>> 10 To 15 With Break <<<
+>  10
 ```
