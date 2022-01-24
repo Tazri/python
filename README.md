@@ -67,6 +67,10 @@ This is simple documentation on python programming language. I create this docum
   - [For Loop](#For_Loop)
   - [range](#range)
   - [for else](#for_else)
+- [Function](#Function)
+  - [Arbitrary Keyword Arguments](#Aribitrary_Keyword_Arguments)
+  - [Default Perameter](#Default_Peramter)
+  - [Rescursion](#Recursion)
 
 # Basic
 
@@ -2969,4 +2973,204 @@ else :
 
 >>> 10 To 15 With Break <<<
 >  10
+```
+
+# Function
+
+Function is a block of code which run when it called. You can pass data and return result as well.
+
+Function syntax in python :
+
+```python
+def function_name(perameter_list) :
+  statement----------------------
+  -------------------------------
+  return result;
+# if you can not return anything in that case function return None value by default
+
+# if you don't know how many argument sent in that case use * operator
+def function_name(*persmeter_list) :
+  statement-------------------------
+  ----------------------------------
+  return result;
+
+# you also send arugemnt with key value pair
+def function_name(key_one,key_two,key_three) :
+  statement ---------------------------------
+  -------------------------------------------
+  return result
+
+function(key_one = "key_one",key_two = 2,key_three = 3);
+
+```
+
+Let's see the example of this rule.....
+**_Program : basic funciton_**
+
+```python
+# basic function
+def sample_function(key_one,key_two) :
+    print("> key_one :",key_one);
+    print("> key_two :",key_two);
+
+# call function by key
+print(">>> Call Sample Function by Key <<<")
+what_return = sample_function(key_two=2,key_one=1);
+
+print("\n\nwaht_return : ",what_return);
+
+# if function expect 3 two arguments than must sent two argument. not less or more.
+
+# see *list peramter in funciton
+def print_all(*perameter_list) :
+    print("peramter_list : ",perameter_list);
+
+print("\n\n>>> print_all('a','b','c') <<<");
+print_all('a','b','c');
+
+print("\n\n>>> print_all() <<<");
+print_all();
+
+# the list is tuple you can not change it
+def print_all(*peramter_list) :
+    print("perameter_list[0] : ",peramter_list[0]);
+    ## peramter_list[0] = '3'; error here
+    print("peramter_list : ",peramter_list);
+
+print("\n\nprint_all('a','b','c') : ");
+print_all('a','b','c');
+```
+
+**_Output : basic function_**
+
+```
+>>> Call Sample Function by Key <<<
+> key_one : 1
+> key_two : 2
+
+
+waht_return :  None
+
+
+>>> print_all('a','b','c') <<<
+peramter_list :  ('a', 'b', 'c')
+
+
+>>> print_all() <<<
+peramter_list :  ()
+
+
+print_all('a','b','c') :
+perameter_list[0] :  a
+peramter_list :  ('a', 'b', 'c')
+```
+
+# Aribitrary_Keyword_Arguments
+
+If did not know how many keyword arugment pass in peramter in that case use \*\* operator. Let's see the syntax :
+
+```python
+def funciton_name(**perameter_dictionary) :
+  --------------------------------------
+  ------------Statement-----------------
+  --------------------------------------
+
+function_name(key_one = value, key_two = value);
+```
+
+**_Program : kwargs_**
+
+```python
+# aribitrary keyword arguments
+
+def just_see(**dictionary) :
+    print("dictionary : ");
+    print(dictionary);
+
+print(">>> just_see(name='tazri',age=17) : ");
+just_see(name='tazri',age=17)
+
+print("\n>>> just_see() : ");
+just_see();
+
+# below this code will throw error
+# print("\n>>> just_see(32) : ");
+# just_see(32);
+```
+
+**_Output : kwargs_**
+
+```
+>>> just_see(name='tazri',age=17) :
+dictionary :
+{'name': 'tazri', 'age': 17}
+
+>>> just_see() :
+dictionary :
+{}
+```
+
+## Default_Perameter
+
+we can set default peramter of function. Let's see the syntax :
+
+```python
+def function_name(perameter = default_value) :
+  statement---------------------------
+  ------------------------------------
+  ------------------------------------
+  return result
+
+```
+
+**_Program : default perameter_**
+
+```python
+def print_something(s = "Anonymous") :
+    print(">>> s : ",s);
+
+print(">>> print_something() <<<");
+print_something();
+
+# if we can not write defination of function but we declear it some reason in that case use pass keyword to pass it.
+def empty() :
+    pass;
+
+
+```
+
+**_Output : default perameter_**
+
+```
+>>> print_something() <<<
+>>> s :  Anonymous
+```
+
+## Recursion
+
+We can do recursion here.Let's see :
+
+**_Program : recursion_**
+
+```python
+# recursion
+def fact(n) :
+    if n <= 0 :
+        return 1;
+    else :
+        return n * fact(n - 1);
+
+print(">>> fact(2) : ",fact(2));
+print(">>> fact(3) : ",fact(3));
+print(">>> fact(4) : ",fact(4));
+print(">>> fact(5) : ",fact(5));
+```
+
+**_Output : recursion_**
+
+```
+>>> fact(2) :  2
+>>> fact(3) :  6
+>>> fact(4) :  24
+>>> fact(5) :  120
 ```
