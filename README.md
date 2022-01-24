@@ -60,6 +60,13 @@ This is simple documentation on python programming language. I create this docum
   - [Copy Dictionary](##Copy_Dictionary)
   - [Nested Dictionary](##Nested_Dictionary)
 - [if else](#if_else)
+- [Loop](#Loop)
+  - [While Loop](##While_Loop)
+  - [Continue_And_Break](##Continue_And_Break)
+  - [while else](##while_else)
+  - [For Loop](##For_Loop)
+  - [range](##range)
+  - [for else](## for_else)
 
 # Basic
 
@@ -2665,4 +2672,277 @@ c or b greatest value
 
 
 b is greater than a.
+```
+
+# Loop
+
+Python has two type loop command.
+
+1. While Loop
+1. For Loop
+
+## While_Loop
+
+In here while loop syntax :
+
+```python
+while condition :
+  statement---------------------
+  ------------------------------
+```
+
+The while loop will run if condition is true otherwise it can not run. Here simple while loop example :
+
+**_Program : while loop_**
+
+```python
+# create simple while loop
+i = 0;
+
+while i < 10 :
+    if i & 1 :
+        print("Odd : ",i);
+    else :
+        print("Even : ",i);
+    i+=1;
+
+```
+
+**_Output : while loop_**
+
+```
+Even :  0
+Odd :  1
+Even :  2
+Odd :  3
+Even :  4
+Odd :  5
+Even :  6
+Odd :  7
+Even :  8
+Odd :  9
+```
+
+**_Notice :_** if did not write base condition in that case condition is true forever. In other word the will be infinite. So create base condition is important.
+
+## Continue_And_Break
+
+contitnue keyword just skip process and break keyword stop the loop immediatly. Example is here :
+
+**_Program : continue and break_**
+
+```python
+# Example of continue and break keyword
+
+# continue
+i = 1;
+
+print(">>> Even Under 0 to 20 <<<");
+while i < 20 :
+    if i & 1 :
+        i += 1;
+        continue;
+
+    print("> Even : ",i);
+    i += 1;
+
+i = 1
+
+# break
+print("\n>>> Try Print 1 to 10 <<<");
+while True :
+    if i == 5 : break;
+    print("> I : ",i);
+    i += 1;
+```
+
+**_Output : continue and break_**
+
+```
+>>> Even Under 0 to 20 <<<
+> Even :  2
+> Even :  4
+> Even :  6
+> Even :  8
+> Even :  10
+> Even :  12
+> Even :  14
+> Even :  16
+> Even :  18
+
+>>> Try Print 1 to 10 <<<
+> I :  1
+> I :  2
+> I :  3
+> I :  4
+```
+
+## while_else
+
+If stop while in first time for condition is False but need to run once in that case use else keyword after while keyword. Let's see the example :
+
+**_Program : while else_**
+
+```python
+# while else
+i = 20;
+
+print("Condition : i > 30 : ");
+while i > 30 :
+    print(">>> It inside the while loop. <<<");
+    break;
+else :
+    print(">>> It inside the else block. <<<");
+
+print("\n\nCondition : i > 1 : ");
+while i > 1 :
+    print(">>> It inside the while loop. <<<");
+    break;
+else :
+    print(">>> It inside the else block. <<<");
+
+```
+
+**_Output : while else_**
+
+```
+Condition : i > 30 :
+>>> It inside the else block. <<<
+
+
+Condition : i > 1 :
+>>> It inside the while loop. <<<
+```
+
+## For_Loop
+
+In python for loop useing for iterating over a sequence (like list, tuple, set, dictionary or a string). Let's see the example of for loop :
+
+**_Program : simple for loop_**
+
+```python
+# example of for loop on list, string
+name_list = ['anonymous','solus','focasa'];
+my_name = "MD Tazri";
+
+# for loop on name_list
+print(">>> Name List <<<");
+for name in name_list :
+    print("> ",name);
+
+# for loop on my_name
+print("\n\n>>> Letter in My Name <<<");
+for letter in my_name :
+    if letter == ' ' : continue;
+    print("> ",letter);
+
+# for loop without content in that case use pass keyword and leave it
+for letter in my_name :
+    pass;
+```
+
+**_Output : simple for loop_**
+
+```
+>>> Name List <<<
+>  anonymous
+>  solus
+>  focasa
+
+
+>>> Letter in My Name <<<
+>  M
+>  D
+>  T
+>  a
+>  z
+>  r
+>  i
+```
+
+## range
+
+If use for loop without any iterable object in that case use range function. It return iterable object. Let's see range function prototype :
+
+```
+range(n);
+it's mean the iterable object is 0 to n and icreament is 1.
+
+we can define start and end value :
+range(start,end);
+it's mean the iterable object is start to end and inrceament is 1.
+
+We can define increament value :
+range(start,end,step);
+it's mean the iterable object is start to end and increament by step.
+```
+
+**_Program : range_**
+
+```python
+# let's see range
+from lib2to3.pgen2.literals import simple_escapes
+
+
+simple_range = range(5);
+print("simple_range : ",simple_range);
+
+# print 1 to 5
+print(">>> 1 TO 5 <<<");
+for i in simple_range :
+    print("> ",i);
+
+# print 10 to 15
+print("\n\n>>> 10 TO 15 <<<");
+for i in range(10,15) :
+    print("> ",i);
+
+# print even number from 20 to 30
+print("\n\n>>> EVEN 20 TO 30 <<<");
+for i in range(20,30,2) :
+    print("> ",i);
+```
+
+**_Output : range_**
+
+```
+simple_range :  range(0, 5)
+>>> 1 TO 5 <<<
+>  0
+>  1
+>  2
+>  3
+>  4
+
+
+>>> 10 TO 15 <<<
+>  10
+>  11
+>  12
+>  13
+>  14
+
+
+>>> EVEN 20 TO 30 <<<
+>  20
+>  22
+>  24
+>  26
+>  28
+```
+
+## for_else
+
+If else block use after for loop then after finish the for loop work and start execute else block. If for loop stop by break then else block can not be execute.
+
+**_Program : for else_**
+
+```python
+
+```
+
+**_Output : for else_**
+
+```
+
 ```
