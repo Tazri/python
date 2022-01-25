@@ -71,6 +71,7 @@ This is simple documentation on python programming language. I create this docum
   - [Arbitrary Keyword Arguments](#Aribitrary_Keyword_Arguments)
   - [Default Perameter](#Default_Peramter)
   - [Rescursion](#Recursion)
+- [Lambda](#Lambda)
 
 # Basic
 
@@ -3173,4 +3174,54 @@ print(">>> fact(5) : ",fact(5));
 >>> fact(3) :  6
 >>> fact(4) :  24
 >>> fact(5) :  120
+```
+
+# Lambda
+
+Lambda is one kind of function which is small and anonymous. Lambda take can any number of perameter but can only one expression. Let's see syntax :
+
+```
+lembda_funciton_name = lambda perameter_lsit : expression.
+```
+
+**_Program : lambda_**
+
+```python
+# create small mini lambda
+sum = lambda a,b : a+b;
+multiply = lambda a,b : a*b;
+
+print(">>> sum(3,5) : ",sum(3,5));
+print(">>> multiply(5,3) : ",multiply(5,3));
+
+# create function which get lambda function as peramter
+def operation(a,b,l) :
+    return l(a,b);
+
+print("\n\n>>> operation(3,2,sum) : ",operation(3,2,sum));
+print("\n\n>>> operation(4,3,multiply) : ",operation(4,3,multiply));
+
+# create funciton which return lambda
+def return_lambda(n) :
+    return lambda a : n*a;
+
+m_5 = return_lambda(5);
+
+print("\n\n>>> m_5(5) : ",m_5(5));
+```
+
+**_Output : lambda_**
+
+```
+>>> sum(3,5) :  8
+>>> multiply(5,3) :  15
+
+
+>>> operation(3,2,sum) :  5
+
+
+>>> operation(4,3,multiply) :  12
+
+
+>>> m_5(5) :  25
 ```
