@@ -72,6 +72,10 @@ This is simple documentation on python programming language. I create this docum
   - [Default Perameter](#Default_Peramter)
   - [Rescursion](#Recursion)
 - [Lambda](#Lambda)
+- [Classes](#Classes)
+  - [init](#init)
+  - [self](#self)
+  - [Delete Object](#Delete_Object)
 
 # Basic
 
@@ -3224,4 +3228,190 @@ print("\n\n>>> m_5(5) : ",m_5(5));
 
 
 >>> m_5(5) :  25
+```
+
+# Classes
+
+Python is and object Oriented programming language. Almost everything in python is object. In here create class syntax :
+
+```python
+class Class_Name :
+    property_name = value
+```
+
+Create object by class syntax :
+
+```python
+object_one = Class_Name()
+print(object.property);
+```
+
+In python if create object by class then class called \_\_init\_\_ funciton by default.
+
+```python
+class Class_Name :
+    def __init__(self,value_one,value_two) :
+        self.property_name_one = value_one;
+        self.property_name_two = value_two
+```
+
+**_Program : basic classes_**
+
+```python
+# create simple class which name is Point
+from operator import pos
+
+
+class Point :
+    x = 40;
+    y = 43;
+
+# create Point object
+position = Point();
+
+print(">>> Position <<<");
+print("position.x : ",position.x);
+print("position.y : ",position.y);
+
+# changing position property
+position.x = 0;
+position.y = 0;
+
+print("\n\n>>> After Change Position Properties <<<");
+print("position.x : ",position.x);
+print("position.y : ",position.y);
+```
+
+**_Output : basic classes_**
+
+```
+>>> Position <<<
+position.x :  40
+position.y :  43
+
+
+>>> After Change Position Properties <<<
+position.x :  0
+position.y :  0
+```
+
+## init
+
+\_\_init\_\_ is a constructor of classes. It set by default. It called when create the class. Syntax here :
+
+```python
+class Class_Name :
+    def __init__(self,value_one,value_two) :
+        self.property_name_one = value_one;
+        self.property_name_two = value_two
+```
+
+In here self is object which is will be create by this class. We set object property by self peramter.
+
+**_Program : init_**
+
+```python
+# create class with init function
+from os import name
+
+
+class Person :
+    def __init__(self,_name,_age) :
+        self.name = _name;
+        self.age = _age;
+
+# create object by perameter
+person_one = Person("Md Tazri",17);
+print(">>> Person Details <<<");
+print("> person_one.name : ",person_one.name);
+print("> person_one.name : ",person_one.age);
+print(">>> Finish Details <<<");
+```
+
+**_Output : init_**
+
+```
+>>> Person Details <<<
+> person_one.name :  Md Tazri
+> person_one.name :  17
+>>> Finish Details <<<
+```
+
+## Self
+
+In first perameter of any function of class is instance of the class. It dose not metter what name is taken. Here :
+
+**_Program : self_**
+
+```python
+# create classs
+class Person :
+    def __init__(this_object,_name,_age,_height) :
+        # here this_object is instance of class
+        this_object.name = _name;
+        this_object.age = _age;
+        this_object.height = _height;
+
+    # show details function
+    def show_details(object) :
+        # here object is instance of class
+        print(">>> Person Details <<<");
+        print("> name : ",object.name);
+        print("> age : ",object.age);
+        print("> height : ",object.height);
+        print(">>> Finish Details <<<");
+
+me = Person("MD Tazri",17,'5foot 1inch');
+
+# print details of me
+me.show_details();
+```
+
+**_Output : self_**
+
+```
+>>> Person Details <<<
+> name :  MD Tazri
+> age :  17
+> height :  5foot 1inch
+>>> Finish Details <<<
+```
+
+## Delete_Object
+
+We can delete object and object property by del keyword.Let's see :
+
+**_Program : delete object_**
+
+```python
+class Point :
+    def __init__(self,_x,_y) :
+        self.x = _x;
+        self.y = _y;
+
+
+position = Point(3,2);
+print("> position : ",position);
+print("> position.x : ",position.x);
+print("> position.y : ",position.y);
+
+# delete x property
+del position.x;
+# print("position.x : ",position.x); this line must throw error
+
+# delete position object
+del position;
+# print("position : ",position); This line must throw error
+
+# if you create class but do not have content in that case use pas keyword
+class Person :
+    pass
+```
+
+**_Output : delete object_**
+
+```
+> position :  <__main__.Point object at 0x7f1948d63a00>
+> position.x :  3
+> position.y :  2
 ```
