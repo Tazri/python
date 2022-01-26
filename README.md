@@ -81,6 +81,10 @@ This is simple documentation on python programming language. I create this docum
 - [Iterators](#Iterators)
   - [Create Iterator](#Create_Iterator)
   - [StopIteration](#StopIteration)
+- [Modules](#Modules)
+  - [Builtin Modules](Builtin_Modules)
+  - [dir](#dir)
+  - [Spacify Value](#Spacify_Value)
 
 # Basic
 
@@ -3791,4 +3795,161 @@ next(my_iterator) :  1
 next(my_iterator) :  2
 next(my_iterator) :  3
 next(my_iterator) :  4
+```
+
+# Modules
+
+It easy to import another file in python. Let's see the example :
+
+```python
+import <file_name>
+
+file_name.access_variable_or_function
+```
+
+**_Program : basic_module_**
+
+```python
+import lib
+
+print("lib.PI : ",lib.PI);
+print("lib.sum(40,20) : ",lib.sum(40,20));
+print("lib.sub(30,4) : ",lib.sub(30,4));
+lib.hello();
+```
+
+**_Output : basic_module_**
+
+```
+lib.PI :  3.1416
+lib.sum(40,20) :  60
+lib.sub(30,4) :  26
+>>> From lib file <<<
+```
+
+**_In lib file :_**
+
+```python
+# create some function and variable
+PI = 3.1416
+
+sum = lambda a,b : a+b;
+sub = lambda a,b : a-b;
+
+def hello() :
+    print(">>> From lib file <<<");
+
+class Person :
+    def __init__(self,_name,_age) :
+        self.name = _name;
+        self.age = _age;
+    def show_details(self) :
+        print(">>> Person Detaild <<<");
+        print("> name : ",self.name);
+        print("> age : ",self.age);
+        print(">>> Finish Details <<<");
+```
+
+Not only that, we import file as another name object. Syntax is here :
+
+```python
+import <file_name> as object_name
+```
+
+**_Program : import as_**
+
+```python
+import lib as myobject;
+
+print("myobject.PI : ",myobject.PI);
+print("myobject.sum(30,20) : ",myobject.sum(30,20));
+print("myobject.sub(40,10) : ",myobject.sub(40,10));
+myobject.hello();
+
+print("\nmyobject : ");
+print(myobject);
+```
+
+**_Output : import as_**
+
+```
+myobject.PI :  3.1416
+myobject.sum(30,20) :  50
+myobject.sub(40,10) :  30
+>>> From lib file <<<
+
+myobject :
+<module 'lib' from '/home/tazri/Tazri/My Work/Learn/python/python/17.modules/lib.py'>
+```
+
+## Builtin_Modules
+
+There are serveral built-in modules in python, which can import whenever we want. Here import builtin modules platform and try to use it.
+
+**_Program : built in modules_**
+
+```python
+import platform as this_platform
+
+print("this_platform.system() : ",this_platform.system());
+```
+
+**_Output : built in modules_**
+
+```
+this_platform.system() :  Linux
+```
+
+## dir
+
+We can use **_dir_** function to know what is inside the module. Example is here :
+
+**_Program : dir_**
+
+```python
+import platform
+import lib
+
+print("dir(lib) : ");
+print(dir(lib));
+print("\n\ndir(platform) : ");
+print(dir(platform));
+```
+
+**_Ouput : dir_**
+
+```
+dir(lib) :
+['PI', 'Person', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'hello', 'sub', 'sum']
+
+
+dir(platform) :
+['_WIN32_CLIENT_RELEASES', '_WIN32_SERVER_RELEASES', '__builtins__', '__cached__', '__copyright__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', '__version__', '_comparable_version', '_component_re', '_default_architecture', '_follow_symlinks', '_ironpython26_sys_version_parser', '_ironpython_sys_version_parser', '_java_getprop', '_libc_search', '_mac_ver_xml', '_node', '_norm_version', '_platform', '_platform_cache', '_pypy_sys_version_parser', '_sys_version', '_sys_version_cache', '_sys_version_parser', '_syscmd_file', '_syscmd_uname', '_syscmd_ver', '_uname_cache', '_ver_output', '_ver_stages', 'architecture', 'collections', 'java_ver', 'libc_ver', 'mac_ver', 'machine', 'node', 'os', 'platform', 'processor', 'python_branch', 'python_build', 'python_compiler', 'python_implementation', 'python_revision', 'python_version', 'python_version_tuple', 're', 'release', 'sys', 'system', 'system_alias', 'uname', 'uname_result', 'version', 'win32_edition', 'win32_is_iot', 'win32_ver']
+```
+
+## Spacify_Value
+
+We can import spacify value in module by **_form_** kyword. sytax is :
+
+```python
+from <file_name> import <what you import>
+```
+
+**_Program : from import_**
+
+```python
+from lib import Person;
+
+me = Person('Md Tazri',17);
+
+me.show_details();
+```
+
+**_Output : from import_**
+
+```
+>>> Person Detaild <<<
+> name :  Md Tazri
+> age :  17
+>>> Finish Details <<<
 ```
