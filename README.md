@@ -88,6 +88,7 @@ This is simple documentation on python programming language. I create this docum
 - [Built_In_Modules](#Built In Modules)
   - [datetime](#datetime)
   - [math](#math)
+- [Try Except](#Try_Except)
 
 # Basic
 
@@ -4019,4 +4020,45 @@ min(32,2,3) :  2
 abs(3.23) :  3.233
 math.pow(2,3) :  8.0
 math.sqrt(36) :  6.0
+```
+
+# Try_Except
+
+**_try_** block let's test a block of code for errors.
+**_except_** block let's handle the error.
+**_else_** block lets execute code is no error.
+**_finally_** block lets execute after try and except.
+
+**_Program : try except_**
+
+```python
+# let's do something error
+
+try :
+    this is error;
+except :
+    print(">>>> error is here. <<<<");
+finally :
+    print(">>> it run whatever what <<<");
+
+try :
+    print("\n\n>>> No error <<<");
+except :
+    print(">>> It can not run because no error here <<<");
+else :
+    print(">>> it run because try block code is correct <<<");
+finally :
+    print(">>> it run whatever what <<<");
+```
+
+**_Output : try except_**
+
+```
+>>>> error is here. <<<<
+>>> it run whatever what <<<
+
+
+>>> No error <<<
+>>> it run because try block code is correct <<<
+>>> it run whatever what <<<
 ```
