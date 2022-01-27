@@ -85,6 +85,9 @@ This is simple documentation on python programming language. I create this docum
   - [Builtin Modules](Builtin_Modules)
   - [dir](#dir)
   - [Spacify Value](#Spacify_Value)
+- [Built_In_Modules](#Built In Modules)
+  - [datetime](#datetime)
+  - [math](#math)
 
 # Basic
 
@@ -3952,4 +3955,68 @@ me.show_details();
 > name :  Md Tazri
 > age :  17
 >>> Finish Details <<<
+```
+
+# Built_In_Modules
+
+In python has some built in modules. Like platform, datetime and math etc. Here to explain some built in modules.
+
+## datetime
+
+In python has built in object datetime.See Date Time in one example :
+
+**_Program : datetime_**
+
+```python
+import datetime;
+
+today = datetime.datetime.now();
+
+print("today : ",today);
+print("today.strftime('%A') : ",today.strftime('%A'));
+print("today.strftime('%a') : ",today.strftime('%a'));
+print("today.strftime('%w') : ",today.strftime('%w'));
+print("today.strftime('%d') : ",today.strftime('%d'));
+```
+
+**_Output : datetime_**
+
+```
+today :  2022-01-26 21:44:10.790629
+today.strftime('%A') :  Wednesday
+today.strftime('%a') :  Wed
+today.strftime('%w') :  3
+today.strftime('%d') :  26
+```
+
+## math
+
+Python has math module to work mathematic releated work. Here see about math in python :
+
+**_Program : math_**
+
+```python
+import math
+
+print("math.pi : ",math.pi);
+print("math.ceil(3.242) : ",math.ceil(3.242));
+print("math.floor(3.242) : ",math.floor(3.242));
+print("max(32,2,3) : ",max(32,2,3));
+print("min(32,2,3) : ",min(32,2,3));
+print("abs(3.23) : ",abs(3.233));
+print("math.pow(2,3) : ",math.pow(2,3));
+print("math.sqrt(36) : ",math.sqrt(36));
+```
+
+**_Output : math_**
+
+```
+math.pi :  3.141592653589793
+math.ceil(3.242) :  4
+math.floor(3.242) :  3
+max(32,2,3) :  32
+min(32,2,3) :  2
+abs(3.23) :  3.233
+math.pow(2,3) :  8.0
+math.sqrt(36) :  6.0
 ```
